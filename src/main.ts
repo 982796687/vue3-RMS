@@ -9,6 +9,8 @@ import router from './router'
 import store, { setupStore } from './store'
 import { globelRegister } from './globel'
 
+
+
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
 
 // import './service/axios_demo'
