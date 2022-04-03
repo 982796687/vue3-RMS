@@ -1,9 +1,7 @@
 <template>
   <el-breadcrumb separator="/">
     <template v-for="item in breadcrumbs" :key="item.name">
-      <el-breadcrumb-item :to="{ path: item.path }">{{
-        item.name
-      }}</el-breadcrumb-item>
+      <el-breadcrumb-item class="fw-b">{{ item.name }}</el-breadcrumb-item>
     </template>
   </el-breadcrumb>
 </template>
@@ -23,4 +21,8 @@ export default defineComponent({
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+.fw-b {
+  font-weight: bolder;
+}
+</style>
