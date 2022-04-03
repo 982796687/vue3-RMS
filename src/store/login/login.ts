@@ -41,6 +41,10 @@ const loginModule: Module<ILoginState, IRootState> = {
   },
   actions: {
     async accountLoginAction({ commit }, payload: IAccount) {
+      //将admin改为coderwhy
+      if (payload.name === 'admin') {
+        payload.name = 'coderwhy'
+      }
       //1.实现登录逻辑
       const loginResult = await accountLoginRequest(payload)
       const { id, token } = loginResult.data
@@ -62,6 +66,7 @@ const loginModule: Module<ILoginState, IRootState> = {
       //4.跳转首页
       router.push('/main')
     },
+    //解决vuex刷新后不保存数据问题，从localstroage中拿取token、userInfo、userMenus
     loadLocalLogin({ commit }) {
       const token = localCache.getCache('token')
       if (token) {

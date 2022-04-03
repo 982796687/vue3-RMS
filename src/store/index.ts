@@ -54,7 +54,7 @@ const store = createStore<IRootState>({
   getters: {},
   modules: { login, system, dashboard }
 })
-
+//调用解决vuex刷新不保存的方法
 export function setupStore() {
   store.dispatch('loadLocalLogin')
   store.dispatch('getInitialDataAction')

@@ -7,7 +7,8 @@
           icon="el-icon-user-solid"
           size="small"
         ></el-avatar>
-        {{ name }}<i class="el-icon-arrow-down el-icon--right"></i>
+        {{ name === 'coderwhy' ? 'admin' : name
+        }}<i class="el-icon-arrow-down el-icon--right"></i>
       </span>
       <template #dropdown>
         <el-dropdown-menu>

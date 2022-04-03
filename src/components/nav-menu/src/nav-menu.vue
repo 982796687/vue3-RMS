@@ -63,7 +63,7 @@ export default defineComponent({
     const router = useRouter()
     const route = useRoute()
     const currentPath = route.path
-
+    //computed 拿到的是ref对象
     const menu = pathMapToMenu(userMenus.value, currentPath)
 
     const defaultValue = ref(menu.id + '')

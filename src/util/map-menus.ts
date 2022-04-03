@@ -8,6 +8,7 @@ export function mapMenusToRoutes(userMenus: any[]): RouteRecordRaw[] {
   const routes: RouteRecordRaw[] = []
   //1.先去加载所有的routes
   const allRoutes: RouteRecordRaw[] = []
+  //require.context是webpak中的语法，获取某个目录下面的文件， (目录，是否递归调用，正则表示要匹配的后缀名)
   const routeFiles = require.context('../router/main', true, /\.ts/)
 
   routeFiles.keys().forEach((key) => {

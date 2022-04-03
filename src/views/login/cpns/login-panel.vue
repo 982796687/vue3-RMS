@@ -59,13 +59,15 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style scoped lang="less">
 .login-border {
   width: 350px;
+  // margin-bottom: 120px;
 }
 .title {
   text-align: center;
 }
+
 .login-panel {
   margin-bottom: 160px;
 }
