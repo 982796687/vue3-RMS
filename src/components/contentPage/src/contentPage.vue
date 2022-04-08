@@ -6,11 +6,13 @@
       :dataCount="dataCount"
       v-model:page="pageInfo"
     >
+      //header中的插槽
       <template #headerHandler>
         <el-button type="primary" v-if="isCreate" @click="handleNewClick()"
           >新建用户</el-button
         >
       </template>
+      //table中的插槽
       <template #status="scope">
         <el-button
           :type="scope.row.enable ? 'success' : 'danger'"
@@ -43,6 +45,7 @@
           >
         </div>
       </template>
+      //动态插槽
       <template
         v-for="item in otherPropSlot"
         :key="item.prop"
@@ -151,6 +154,7 @@ export default defineComponent({
       handleDeleteClick,
       handleNewClick,
       handleEditClick
+      // contentTableConfig
     }
   }
 })

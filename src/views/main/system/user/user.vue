@@ -2,7 +2,7 @@
   <div class="user">
     <searchPage
       :searchFormConfig="searchFormConfig"
-      @resetBtnClick="handleResetClick"
+      @handleResetClick="handleResetClick"
       @queryBtnClick="handleQueryClick"
     ></searchPage>
     <contentPage
@@ -57,7 +57,7 @@ export default defineComponent({
       passwordItem!.isHidden = true
       // }
     }
-    //2。动态添加部门和角色列表
+    //2. 动态添加部门和角色列表
     const modalConfigRef = computed(() => {
       const store = useStore()
       const departmentItem = modalConfig.formItems.find(

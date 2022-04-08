@@ -4,7 +4,7 @@ import contentPage from '@/components/contentPage'
 export function usePageSearch() {
   const pageContentRef = ref<InstanceType<typeof contentPage>>()
 
-  const handleResetClick = () => {
+  const handleResetClick = (): void => {
     pageContentRef.value?.getPageData()
   }
   const handleQueryClick = (queryInfo: any) => {
