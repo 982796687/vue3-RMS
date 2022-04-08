@@ -6,6 +6,7 @@
       pageName="role"
       @handleEditClick="editBtnClick"
       @handleNewClick="newBtnClick"
+      newBtn="新建角色"
     ></contentPage>
     <modal-page
       :modalConfig="modalConfig"

@@ -8,8 +8,11 @@
     >
       //header中的插槽
       <template #headerHandler>
-        <el-button type="primary" v-if="isCreate" @click="handleNewClick()"
-          >新建用户</el-button
+        <el-button
+          type="primary"
+          v-if="isCreate && newBtn"
+          @click="handleNewClick()"
+          >{{ newBtn }}</el-button
         >
       </template>
       //table中的插槽
@@ -77,6 +80,10 @@ export default defineComponent({
     contentTableConfig: {
       type: Object,
       required: true
+    },
+    newBtn: {
+      type: String,
+      default: ''
     }
   },
   emits: ['handleNewClick', 'handleEditClick'],
@@ -100,6 +107,8 @@ export default defineComponent({
         }
       })
     }
+    //新建按钮的信息
+    // const newBtn = props.contentTableConfig
 
     //修改分页器
     const pageInfo = ref({ pageSize: 10, currentPage: 1 })
@@ -154,6 +163,7 @@ export default defineComponent({
       handleDeleteClick,
       handleNewClick,
       handleEditClick
+      // newBtn
       // contentTableConfig
     }
   }

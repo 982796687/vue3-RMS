@@ -11,6 +11,7 @@
       pageName="users"
       @handleEditClick="editBtnClick"
       @handleNewClick="newBtnClick"
+      newBtn="新建用户"
     ></contentPage>
     <modalPage
       :modalConfig="modalConfigRef"
