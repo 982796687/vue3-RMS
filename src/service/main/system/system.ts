@@ -2,7 +2,7 @@ import hyRequest from '../../index'
 import { IDataType } from '@/service/login/type'
 
 export function getPageListData(url: string, queryInfo: any) {
-  return hyRequest.post<IDataType>({
+  return hyRequest.post({
     url: url,
     data: queryInfo
   })

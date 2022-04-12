@@ -35,7 +35,7 @@ export default defineComponent({
       required: true
     }
   },
-  emits: ['queryBtnClick', 'handleResetClick'],
+  emits: ['queryBtnClick', 'resetBtnClick'],
   setup(props, { emit }) {
     // 双向绑定的属性应该是由配置文件的field来决定
     // 1.优化一: formData中的属性应该动态来决定
@@ -48,10 +48,12 @@ export default defineComponent({
     //2.优化重置按钮
     const handleResetClick = (): void => {
       formData.value = formOriginData
-      emit('handleResetClick')
+      emit('resetBtnClick')
     }
     //3.优化搜索按钮
     const handleQueryClick = (): void => {
+      console.log(formData.value)
+
       emit('queryBtnClick', formData.value)
     }
     return { formData, ElIcon, handleResetClick, handleQueryClick }

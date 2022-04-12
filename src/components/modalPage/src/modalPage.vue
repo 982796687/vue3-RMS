@@ -2,7 +2,7 @@
   <div class="modal-page">
     <el-dialog
       v-model="dialogVisible"
-      title="新建用户"
+      :title="newBtn"
       width="25%"
       center
       destroy-on-close
@@ -44,6 +44,9 @@ export default defineComponent({
     otherInfo: {
       type: Object,
       default: () => ({})
+    },
+    newBtn: {
+      type: String
     }
   },
   setup(props) {
@@ -71,8 +74,6 @@ export default defineComponent({
           editData: { ...formData.value, ...props.otherInfo }
         })
       } else {
-        console.log('otherInfo:', props.otherInfo)
-
         store.dispatch('createPageDataAction', {
           pageName: props.pageName,
           newData: { ...formData.value, ...props.otherInfo }

@@ -1,7 +1,12 @@
 <template>
   <div class="role">
-    <search-page :searchFormConfig="searchFormConfig"></search-page>
+    <search-page
+      :searchFormConfig="searchFormConfig"
+      @resetBtnClick="handleResetClick"
+      @queryBtnClick="handleQueryClick"
+    ></search-page>
     <contentPage
+      ref="pageContentRef"
       :contentTableConfig="contentTableConfig"
       pageName="role"
       @handleEditClick="editBtnClick"
@@ -12,6 +17,7 @@
       :modalConfig="modalConfig"
       ref="pageModalRef"
       pageName="role"
+      newBtn="新建角色"
       :otherInfo="otherInfo"
       :defaultInfo="defaultInfo"
     >
@@ -44,6 +50,7 @@ import { usePageModal } from '@/hooks/use-page-modal'
 import { useStore } from '@/store'
 import { menuMapLeafKeys } from '@/util/map-menus'
 import { ElTree } from 'element-plus'
+import { usePageSearch } from '@/hooks/use-page-search'
 
 export default defineComponent({
   name: 'role',
@@ -54,6 +61,9 @@ export default defineComponent({
     modalPage
   },
   setup() {
+    //处理search中搜索按钮（这个hooks是在重新发送网络请求）
+    const [pageContentRef, handleResetClick, handleQueryClick] = usePageSearch()
+
     const eltreeRef = ref<InstanceType<typeof ElTree>>()
 
     const editCallback = (item: any) => {
@@ -90,7 +100,10 @@ export default defineComponent({
       menus,
       handleCheckChange,
       otherInfo,
-      eltreeRef
+      eltreeRef,
+      handleQueryClick,
+      pageContentRef,
+      handleResetClick
     }
   }
 })

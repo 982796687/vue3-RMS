@@ -96,14 +96,17 @@ export default defineComponent({
     const isDelete = usePermission(props.pageName, 'delete')
     const isQuery = usePermission(props.pageName, 'query')
     //网络请求
-    const getPageData = (queryInfo: any = {}) => {
+    let otherQueryInfo = {}
+    const getPageData = (otherInfo: any = {}) => {
       if (!isQuery) return
+
+      otherQueryInfo = otherInfo
       store.dispatch('getPageListAction', {
         pageName: props.pageName,
         queryInfo: {
           offset: pageInfo.value.pageSize * (pageInfo.value.currentPage - 1),
           size: pageInfo.value.pageSize,
-          ...queryInfo
+          ...otherQueryInfo
         }
       })
     }

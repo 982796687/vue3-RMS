@@ -13,6 +13,7 @@ export function usePageModal(newCb?: CallbackFn, editCb?: CallbackFn) {
       pageModalRef.value.dialogVisible = true
     }
     newCb && newCb()
+    // console.log('22')
   }
   const editBtnClick = (item: any) => {
     defaultInfo.value = { ...item }

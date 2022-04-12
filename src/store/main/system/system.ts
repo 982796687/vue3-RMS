@@ -64,8 +64,10 @@ const systemModule: Module<ISystemState, IRootState> = {
     async getPageListAction({ commit }, payload: any) {
       const pageName = payload.pageName
       const pageUrl = `/${pageName}/list`
+      console.log(pageUrl)
 
       const pageResult = await getPageListData(pageUrl, payload.queryInfo)
+      console.log(pageResult.data)
 
       const { list, totalCount } = pageResult.data
 

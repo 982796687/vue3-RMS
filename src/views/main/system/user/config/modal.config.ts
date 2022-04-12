@@ -43,7 +43,7 @@ export const modalConfig: IForm = {
       options: []
     }
   ],
-  formStyle: { padding: '10px 40px' },
+  formStyle: { padding: '5px 40px' },
   colLayout: {
     xl: 24,
     lg: 24,

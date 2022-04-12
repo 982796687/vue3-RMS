@@ -2,7 +2,7 @@
   <div class="user">
     <searchPage
       :searchFormConfig="searchFormConfig"
-      @handleResetClick="handleResetClick"
+      @resetBtnClick="handleResetClick"
       @queryBtnClick="handleQueryClick"
     ></searchPage>
     <contentPage
@@ -17,6 +17,7 @@
       :modalConfig="modalConfigRef"
       ref="pageModalRef"
       pageName="users"
+      newBtn="新建用户"
       :defaultInfo="defaultInfo"
     ></modalPage>
   </div>

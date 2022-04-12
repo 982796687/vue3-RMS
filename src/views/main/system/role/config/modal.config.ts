@@ -16,7 +16,7 @@ export const modalConfig: IForm = {
       placeholder: '请输入角色介绍'
     }
   ],
-  formStyle: { padding: '10px 40px' },
+  formStyle: { padding: '5px 40px' },
   colLayout: {
     xl: 24,
     lg: 24,

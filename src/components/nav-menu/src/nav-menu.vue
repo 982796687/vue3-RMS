@@ -14,7 +14,7 @@
     >
       <template v-for="items in userMenus" :key="items.id">
         <!-- // 1.若有子菜单 -->
-        <template v-if="items.type === 1">
+        <template v-if="items.type === 1 && items.id !== 41">
           <el-sub-menu :index="items.id + ''">
             <template #title>
               <i v-if="items.icon" :class="items.icon"></i>
