@@ -4,7 +4,7 @@ export const searchFormConfig: IForm = {
   labelWidth: '120px',
   formItems: [
     {
-      field: 'department',
+      field: 'name',
       type: 'input',
       label: '部门名称',
       placeholder: '请输入部门名称'

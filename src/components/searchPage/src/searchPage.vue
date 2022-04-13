@@ -35,7 +35,7 @@ export default defineComponent({
       required: true
     }
   },
-  emits: ['queryBtnClick', 'resetBtnClick'],
+  emits: ['resetBtnClick', 'queryBtnClick'],
   setup(props, { emit }) {
     // 双向绑定的属性应该是由配置文件的field来决定
     // 1.优化一: formData中的属性应该动态来决定

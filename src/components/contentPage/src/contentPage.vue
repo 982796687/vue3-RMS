@@ -144,8 +144,6 @@ export default defineComponent({
       })
     }
     const handleNewClick = () => {
-      console.log('111')
-
       emit('handleNewClick')
     }
     const handleEditClick = (item: any) => {

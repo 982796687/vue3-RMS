@@ -7,4 +7,6 @@ export interface ISystemState {
   goodsCount: number
   menuList: []
   menuCount: number
+  departmentList: []
+  departmentCount: number
 }
