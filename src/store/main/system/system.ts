@@ -5,7 +5,6 @@ import {
   editPageData
 } from '@/service/main/system/system'
 import { IRootState } from '@/store/type'
-import { List } from 'echarts'
 
 import { Module } from 'vuex'
 import { ISystemState } from './type'
@@ -22,7 +21,9 @@ const systemModule: Module<ISystemState, IRootState> = {
       menuList: [],
       menuCount: 0,
       departmentList: [],
-      departmentCount: 0
+      departmentCount: 0,
+      categoryList: [],
+      categoryCount: 0
     }
   },
   getters: {
@@ -69,6 +70,12 @@ const systemModule: Module<ISystemState, IRootState> = {
     },
     changeDepartmentCount(state, count: any) {
       state.departmentCount = count
+    },
+    changeCategoryList(state, list: any) {
+      state.categoryList = list
+    },
+    changeCategoryCount(state, count: number) {
+      state.categoryCount = count
     }
   },
   actions: {

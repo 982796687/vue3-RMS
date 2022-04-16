@@ -3,4 +3,5 @@ export interface IDdashboardState {
   categoryGoodsSale: any[]
   categoryGoodsFavor: any[]
   addressGoodsSale: any[]
+  amountList: any[]
 }

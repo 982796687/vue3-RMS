@@ -99,6 +99,7 @@ export default defineComponent({
     let otherQueryInfo = {}
     const getPageData = (otherInfo: any = {}) => {
       if (!isQuery) return
+      console.log('进入getpageInfo')
 
       otherQueryInfo = otherInfo
       store.dispatch('getPageListAction', {
