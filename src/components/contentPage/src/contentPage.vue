@@ -165,8 +165,6 @@ export default defineComponent({
       handleDeleteClick,
       handleNewClick,
       handleEditClick
-      // newBtn
-      // contentTableConfig
     }
   }
 })

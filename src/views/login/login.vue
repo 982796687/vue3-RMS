@@ -25,6 +25,7 @@ export default defineComponent({
   align-items: center;
   width: 100%;
   height: 100%;
+  margin-top: 150px;
   background: url('../../assets/img/login-bg.svg');
 }
 </style>
