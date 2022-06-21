@@ -28,6 +28,10 @@
     <el-button type="primary" class="btn-login" @click="BtnLogin"
       >立即登录</el-button
     >
+    <div class="notice">
+      <span>账号：admin</span>
+      <span>密码：123456</span>
+    </div>
   </div>
 </template>
 
@@ -79,5 +83,17 @@ export default defineComponent({
 .btn-login {
   width: 100%;
   margin-top: 10px;
+}
+.notice {
+  width: 200px;
+  height: 100px;
+  // background-color: red;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  span {
+    display: block;
+    font-size: x-large;
+  }
 }
 </style>
