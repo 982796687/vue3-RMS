@@ -41,24 +41,24 @@ module.exports = {
         chunks: 'all',
         minChunks: 2,
         cacheGroups: {
-          default: false,
-          vendors: false,
-          common: {
-            chunks: 'all',
-            minChunks: 2,
-            name: 'common',
-            enforce: true,
-            priority: 5
-          },
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            chunks: 'all',
-            enforce: true,
-            // maxSize: 500,
-            priority: 10,
-            name: 'vendor'
-            // reuseExistingChunk: true
-          }
+          default: true,
+          vendors: true
+          // common: {
+          //   chunks: 'all',
+          //   minChunks: 2,
+          //   name: 'common',
+          //   enforce: true,
+          //   priority: 5
+          // },
+          // vendor: {
+          //   test: /[\\/]node_modules[\\/]/,
+          //   chunks: 'all',
+          //   enforce: true,
+          //   // maxSize: 500,
+          //   priority: 10,
+          //   name: 'vendor'
+          //   // reuseExistingChunk: true
+          // }
         }
       }
     }
