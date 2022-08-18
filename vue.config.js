@@ -54,10 +54,10 @@ module.exports = {
             test: /[\\/]node_modules[\\/]/,
             chunks: 'all',
             enforce: true,
-            maxSize: 500,
+            // maxSize: 500,
             priority: 10,
-            name: 'vendor',
-            reuseExistingChunk: true
+            name: 'vendor'
+            // reuseExistingChunk: true
           }
         }
       }
