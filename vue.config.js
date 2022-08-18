@@ -15,6 +15,19 @@ module.exports = {
       }
     }
   },
+  productionSourceMap: false,
+  chainWebpack: (config) => {
+    /* 添加分析工具*/
+    if (process.env.NODE_ENV === 'production') {
+      if (process.env.npm_config_report) {
+        config
+          .plugin('webpack-bundle-analyzer')
+          .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
+          .end()
+        config.plugins.delete('prefetch')
+      }
+    }
+  },
   // 2.配置方式二: 和webpack属性完全一致, 最后会进行合并
   configureWebpack: {
     resolve: {
@@ -26,6 +39,7 @@ module.exports = {
       // miniSize: true,
       splitChunks: {
         chunks: 'all',
+        minChunks: 2,
         cacheGroups: {
           default: false,
           vendors: false,
@@ -38,10 +52,12 @@ module.exports = {
           },
           vendor: {
             test: /[\\/]node_modules[\\/]/,
-            chunks: 'initial',
+            chunks: 'all',
             enforce: true,
+            maxSize: 500,
             priority: 10,
-            name: 'vendor'
+            name: 'vendor',
+            reuseExistingChunk: true
           }
         }
       }
