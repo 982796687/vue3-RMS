@@ -15,25 +15,36 @@ module.exports = {
       }
     }
   },
-  // publicPath: './',
   // 2.配置方式二: 和webpack属性完全一致, 最后会进行合并
   configureWebpack: {
     resolve: {
       alias: {
         components: '@/components'
       }
+    },
+    optimization: {
+      // miniSize: true,
+      splitChunks: {
+        chunks: 'all',
+        cacheGroups: {
+          default: false,
+          vendors: false,
+          common: {
+            chunks: 'all',
+            minChunks: 2,
+            name: 'common',
+            enforce: true,
+            priority: 5
+          },
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            chunks: 'initial',
+            enforce: true,
+            priority: 10,
+            name: 'vendor'
+          }
+        }
+      }
     }
   }
-  // configureWebpack: (config) => {
-  //   config.resolve.alias = {
-  //     '@': path.resolve(__dirname, 'src'),
-  //     components: '@/components'
-  //   }
-  // }
-  // 3.配置方式三:
-  // chainWebpack: (config) => {
-  //   config.resolve.alias
-  //     .set('@', path.resolve(__dirname, 'src'))
-  //     .set('components', '@/components')
-  // }
 }
